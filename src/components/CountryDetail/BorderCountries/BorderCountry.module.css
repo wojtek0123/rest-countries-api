@@ -1,0 +1,9 @@
+.borderCountry {
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	background-color: var(--dark-mode-text-light-mode-elements);
+	color: var(--light-mode-text);
+	margin: 0.5em;
+	padding: 0.5em 1.5em;
+	font-size: 0.8rem;
+}

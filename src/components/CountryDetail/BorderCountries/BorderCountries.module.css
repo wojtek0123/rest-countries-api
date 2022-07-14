@@ -1,0 +1,32 @@
+.borderBox {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.borderTitle {
+	font-size: 1rem;
+	margin-bottom: 1em;
+	white-space: nowrap;
+}
+
+.borderMessage {
+	font-weight: 300;
+}
+
+@media (min-width: 1400px) {
+	.borderContainer {
+		display: flex;
+		align-items: center;
+	}
+
+	.borderBox {
+		align-items: center;
+	}
+
+	.borderTitle {
+		font-size: 1rem;
+		margin-bottom: 0em;
+		margin-right: 1em;
+	}
+}

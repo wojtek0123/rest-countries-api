@@ -4,6 +4,13 @@
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--light-mode-text);
+  transition: transform .3s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .body {
@@ -12,9 +19,7 @@
 
 .card img {
   width: 100%;
-  object-fit: cover;
-  object-position: center;
-  height: 200px;
+  height: 180px;
   box-shadow: var(--shadow);
 }
 
