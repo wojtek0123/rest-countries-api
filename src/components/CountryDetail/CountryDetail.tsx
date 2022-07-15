@@ -1,22 +1,27 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetchCountry from '../../hooks/use-fetch-country';
 import { Country } from '../../types/types';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import styles from './CountryDetail.module.css';
 import BorderCountires from './BorderCountries/BorderCountries';
-import BackButton from './BackButton/BackButton';
 import Content from './TextContent/TextContent';
+import arrowLeft from '../../assets/icons/arrow-left.svg';
 
 const countryNameFromCodedFormUrl = 'https://restcountries.com/v3.1/alpha/';
 
 const CountryDetail: React.FC = () => {
 	const { id } = useParams();
 	const { countries, getCountriesData, isLoading } = useFetchCountry();
+	const navigate = useNavigate();
 	const [borders, setBorders] = useState<string[]>([]);
 	const [country, setCountry] = useState<Country | undefined>();
 
 	const countryDetailURL = `https://restcountries.com/v3.1/name/${id}?fullText=true`;
+
+	const backButtonHandler = () => {
+		navigate('/');
+	};
 
 	const displayBordersCountry = useCallback((borders: string[]) => {
 		if (borders === undefined) {
@@ -55,7 +60,10 @@ const CountryDetail: React.FC = () => {
 		<div className='app'>
 			<div className={styles.countryDetail}>
 				{isLoading && <LoadingSpinner />}
-				<BackButton />
+				<button onClick={backButtonHandler} className={styles.backButton}>
+					<img src={arrowLeft} alt='Arrow left' className={styles.icon} />
+					<span className={styles.backButton__text}>Back</span>
+				</button>
 				<div className={styles.container}>
 					<img
 						className={styles.flag}

@@ -1,25 +1,24 @@
-import { useEffect } from 'react';
-import useFetchCountry from '../../hooks/use-fetch-country';
+import { Country } from '../../types/types';
 import Card from '../Card/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import styles from './Cards.module.css';
 
-const allCountriesURL = 'https://restcountries.com/v3.1/all';
-
-const Cards: React.FC = () => {
-	const { isLoading, countries, getCountriesData } = useFetchCountry();
-
-	useEffect(() => {
-		getCountriesData(allCountriesURL);
-	}, [getCountriesData]);
+const Cards: React.FC<{ filteredCountries: Country[]; isLoading: boolean }> = ({
+	filteredCountries,
+	isLoading
+}) => {
 
 	if (isLoading) {
-		return <LoadingSpinner />;
+		return <LoadingSpinner />
+	}
+
+	if (filteredCountries.length === 0) {
+		return <p className={styles.message}>Not found countries!</p>;
 	}
 
 	return (
 		<div className={styles.cards}>
-			{countries.map((country, index) => (
+			{filteredCountries.map((country, index) => (
 				<Card
 					key={index}
 					name={country.name.common}

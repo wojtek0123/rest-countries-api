@@ -5,6 +5,13 @@
   margin: 3em;
 }
 
+.message {
+  text-align: center;
+  margin-top: 3em;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
 @media (min-width: 768px) {
   .cards {
     margin-inline: 1em;
@@ -14,5 +21,9 @@
 @media (min-width: 1400px) {
   .cards {
     margin-inline: 0em;
+  }
+
+  .message {
+    font-size: 1.5rem;
   }
 }
