@@ -1,10 +1,15 @@
 :root {
-	--dark-mode-elements: hsl(209, 23%, 22%);
-	--dark-mode-background: hsl(207, 26%, 17%);
-	--light-mode-text: hsl(200, 15%, 8%);
-	--light-mode-input: hsl(0, 0%, 52%);
-	--light-mode-background: hsl(0, 0%, 98%);
-	--dark-mode-text-light-mode-elements: hsl(0, 0%, 100%);
+	--text: hsl(200, 15%, 8%);
+	--input: hsl(0, 0%, 52%);
+	--background: hsl(0, 0%, 98%);
+	--elements: hsl(0, 0%, 100%);
 	--radius: .3em;
-  --shadow: 0 0 0.2rem var(--light-mode-input);
+  --shadow: 0 0 0.2rem var(--elements);
+}
+
+[data-theme='dark'] {
+	--elements: hsl(209, 23%, 22%);
+	--background: hsl(207, 26%, 17%);
+	--text: hsl(0, 0%, 100%);
+	--shadow: 0 0 0.2rem var(--elements);
 }

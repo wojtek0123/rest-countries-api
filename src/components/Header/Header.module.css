@@ -3,8 +3,9 @@
 	justify-content: center;
 	align-items: center;
 	padding: 2em 1em;
-	background-color: var(--dark-mode-text-light-mode-elements);
+	background-color: var(--elements);
 	box-shadow: var(--shadow);
+	color: var(--text);
 }
 
 .container {
@@ -15,7 +16,7 @@
 	width: 100%;
 }
 
-.header h1 {
+.title {
 	font-size: 1rem;
 	font-weight: 800;
 }
@@ -26,21 +27,24 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: var(--text);
+	cursor: pointer;
 }
 
-.header p {
+.text {
 	font-size: 1rem;
 	font-weight: 300;
 }
 
-.header img {
+.image {
 	width: 1.75em;
 	height: 1.75em;
 	margin-right: 0.8em;
+	fill: var(--text);
 }
 
 @media (min-width: 1400px) {
-	.header h1 {
+	.title {
 		font-size: 1.5rem;
 	}
 }

@@ -1,5 +1,5 @@
 .form {
-	margin-top: 2em;
+	padding-top: 2em;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -11,7 +11,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0em 2em;
-	background-color: var(--dark-mode-text-light-mode-elements);
+	background-color: var(--elements);
 	border: transparent;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
@@ -27,7 +27,7 @@
 	border: none;
 	background-color: transparent;
 	font-size: 0.9rem;
-	color: var(--light-mode-text);
+	color: var(--text);
 	border: 1px solid transparent;
 	width: 100%;
 	padding: 1em 0;
@@ -56,7 +56,7 @@
 	border-radius: var(--radius);
 	border: none;
 	box-shadow: var(--shadow);
-	color: var(--light-mode-text);
+	color: var(--text);
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 600;
 	width: 100%;
@@ -70,7 +70,7 @@
 }
 
 .select option {
-	color: var(--light-mode-text);
+	color: var(--text);
 	font-size: 0.9rem;
 	margin: 1em 0;
 	font-family: 'Nunito Sans', sans-serif;
@@ -82,12 +82,13 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: 2.5em;
+		padding-top: 2.5em;
 	}
 
 	.select {
 		margin-top: 0;
 		max-width: 200px;
+		background-color: var(--elements);
 	}
 
 	.searchInput {
@@ -97,7 +98,7 @@
 
 @media (min-width: 1440px) {
 	.form {
-		margin-top: 3em;
+		padding-top: 3em;
 		margin-inline: 0;
 	}
 }

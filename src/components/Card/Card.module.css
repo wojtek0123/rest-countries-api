@@ -1,11 +1,11 @@
 .card {
   width: 100%;
-  background-color: var(--dark-mode-text-light-mode-elements);
+  background-color: var(--elements);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
   text-decoration: none;
-  color: var(--light-mode-text);
+  color: var(--text);
   transition: transform .3s ease-out;
 }
 

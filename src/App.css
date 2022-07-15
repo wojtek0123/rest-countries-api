@@ -1,5 +1,4 @@
 .app {
-	max-width: 1400px;
-	margin-inline: auto;
-	width: 100%;
+	background-color: var(--background);
+	min-height: 100vh;
 }
