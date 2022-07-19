@@ -12,24 +12,30 @@ const Form: React.FC<{
 }> = ({ onFilteredCountries, onIsLoading }) => {
 	const [selectedValue, setSelectedValue] = useState('');
 	const [enteredName, setEnteredName] = useState('');
-
 	const { isLoading, countries, getCountriesData } = useFetchCountry();
 	const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
 
-	const update = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const filteringCountries = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setEnteredName(event.target.value);
-		if (event.target.value === '' && selectedValue !== '') {
-			setFilteredCountries(
-				countries.filter((country) => country.region === selectedValue)
+		let selectedCountries: Country[];
+
+		if (selectedValue !== '') {
+			selectedCountries = countries
+				.filter((country) => country.region === selectedValue)
+				.filter((country) =>
+					country.name.common
+						.toLowerCase()
+						.includes(event.target.value.toLowerCase())
+				);
+		} else {
+			selectedCountries = countries.filter((country) =>
+				country.name.common
+					.toLowerCase()
+					.includes(event.target.value.toLowerCase())
 			);
-			return;
 		}
 
-		setFilteredCountries(
-			filteredCountries.filter((country) =>
-				country.name.common.includes(event.target.value)
-			)
-		);
+		setFilteredCountries(selectedCountries);
 	};
 
 	useEffect(() => {
@@ -40,22 +46,15 @@ const Form: React.FC<{
 		event.preventDefault();
 	};
 
-	const getSelectedValue = (event: React.ChangeEvent<HTMLSelectElement>) => {
+	const filteringCountriesByRegion = (
+		event: React.ChangeEvent<HTMLSelectElement>
+	) => {
 		setSelectedValue(event.target.value);
 
-		if (enteredName !== '') {
-			console.log('Jestem');
-			setFilteredCountries(
-				countries
-					.filter((country) => country.name.common.includes(enteredName))
-					.filter((country) => country.region === event.target.value)
-			);
-			return;
-		}
-
 		setFilteredCountries(
-			filteredCountries.filter(
-				(country) => country.region === event.target.value
+			countries.filter(
+				(country) =>
+					country.region.toLowerCase() === event.target.value.toLowerCase()
 			)
 		);
 	};
@@ -70,7 +69,7 @@ const Form: React.FC<{
 		} else {
 			onFilteredCountries(filteredCountries);
 		}
-		onIsLoading(isLoading)
+		onIsLoading(isLoading);
 	}, [
 		selectedValue,
 		filteredCountries,
@@ -78,7 +77,7 @@ const Form: React.FC<{
 		enteredName,
 		countries,
 		onIsLoading,
-		isLoading
+		isLoading,
 	]);
 
 	return (
@@ -88,13 +87,13 @@ const Form: React.FC<{
 					<img src={searchIcon} alt='search icon' />
 				</button>
 				<input
-					onInput={update}
+					onInput={filteringCountries}
 					type='search'
 					placeholder='Search for a country...'
 				/>
 			</div>
 			<select
-				onChange={getSelectedValue}
+				onChange={filteringCountriesByRegion}
 				defaultValue='Filter by Region'
 				className={styles.select}
 			>

@@ -54,6 +54,51 @@
 	fill: var(--text);
 }
 
+.borderCountry {
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	background-color: var(--elements);
+	color: var(--text);
+	margin: 0.5em;
+	padding: 0.5em 1.5em;
+	font-size: 0.8rem;
+}
+
+.borderBox {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.borderTitle {
+	font-size: 1rem;
+	margin-bottom: 1em;
+	white-space: nowrap;
+	color: var(--text);
+}
+
+.borderMessage {
+	font-weight: 300;
+	color: var(--text);
+}
+
+.box {
+	margin-bottom: 3em;
+}
+
+.text {
+	font-size: 0.85rem;
+	font-weight: 800;
+	margin: 0.7em 0;
+	display: block;
+	color: var(--text);
+}
+
+.content {
+	font-weight: 300;
+	margin-left: 0.1em;
+}
+
 @media (min-width: 1024px) {
 	.container {
 		flex-direction: row;
@@ -78,6 +123,34 @@
 	.title {
 		margin: 1em 0 1em;
 		font-size: 2rem;
+	}
+
+	.borderContainer {
+		display: flex;
+		align-items: center;
+	}
+
+	.borderBox {
+		align-items: center;
+	}
+
+	.borderTitle {
+		font-size: 1rem;
+		margin-bottom: 0em;
+		margin-right: 1em;
+	}
+
+	.boxes {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.box {
+		margin-right: 1em;
+	}
+
+	.text {
+		font-size: 0.95rem;
 	}
 }
 

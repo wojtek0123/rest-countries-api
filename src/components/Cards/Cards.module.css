@@ -10,6 +10,7 @@
   margin-top: 3em;
   font-size: 1.2rem;
   font-weight: 800;
+  color: var(--text);
 }
 
 @media (min-width: 768px) {

@@ -1,30 +1,32 @@
-export type Currency = {
-	name: string;
-	symbol: string;
-};
-
-// export type Flag = {
-// 	png: string;
-// 	svg: string;
-// };
-
 export type Country = {
 	name: {
 		common: string;
-		nativeName: string[];
+		nativeName: {
+			[key: string]: {
+				official: string;
+				common: string;
+			};
+		};
 	};
 	region: string;
 	population: number;
 	subregion: string;
 	capital: string;
-	currencies: string[];
-	languages: Object[];
+	currencies: {
+		[key: string]: {
+			name: string;
+			symbol: string;
+		};
+	};
+	languages: {
+		[key: string]: string;
+	};
 	borders?: string[];
 	tld: string[];
 	flags: {
-    png: string,
-    svg: string
-  };
+		png: string;
+		svg: string;
+	};
 };
 
 export enum Details {
