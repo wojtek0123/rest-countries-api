@@ -17,7 +17,7 @@ const Cards: React.FC<{ filteredCountries: Country[]; isLoading: boolean }> = ({
 	}
 
 	return (
-		<div className={styles.cards}>
+		<section className={styles.cards}>
 			{filteredCountries.map((country, index) => (
 				<Card
 					key={index}
@@ -28,7 +28,7 @@ const Cards: React.FC<{ filteredCountries: Country[]; isLoading: boolean }> = ({
 					flagImage={country.flags.png}
 				/>
 			))}
-		</div>
+		</section>
 	);
 };
 

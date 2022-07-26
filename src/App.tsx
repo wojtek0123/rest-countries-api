@@ -23,13 +23,13 @@ function App() {
 	return (
 		<div className='app' data-theme={theme}>
 			<Header />
-			<div className='wrapper'>
+			<main className='wrapper'>
 				<Form
 					onFilteredCountries={typedCountryNameByInput}
 					onIsLoading={isLoadingHandler}
 				/>
 				<Cards filteredCountries={typedName} isLoading={isLoading} />
-			</div>
+			</main>
 		</div>
 	);
 }
