@@ -78,7 +78,7 @@ const CountryDetail: React.FC = () => {
 	}
 
 	return (
-		<div className='app' data-theme={theme}>
+		<main className='app' data-theme={theme}>
 			<div className='wrapper'>
 				<div className={styles.countryDetail}>
 					{isLoading && <LoadingSpinner />}
@@ -157,7 +157,7 @@ const CountryDetail: React.FC = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 
