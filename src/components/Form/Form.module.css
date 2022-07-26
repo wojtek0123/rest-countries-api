@@ -52,10 +52,11 @@
 
 .select {
 	margin-top: 2em;
-	padding: 1em 2em;
+	padding: 1em 0.2em 1em 1em;
 	border-radius: var(--radius);
 	border: none;
 	box-shadow: var(--shadow);
+	background-color: var(--elements);
 	color: var(--text);
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 600;
@@ -63,10 +64,7 @@
 	max-width: 50vw;
 	font-size: 0.9rem;
 	cursor: pointer;
-}
-
-.select:focus {
-	outline: none;
+	border-right: 1em solid transparent;
 }
 
 .select option {
@@ -75,6 +73,10 @@
 	margin: 1em 0;
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 600;
+}
+
+select::-ms-expand {
+	padding-right: 1em;
 }
 
 @media (min-width: 768px) {
@@ -87,6 +89,7 @@
 
 	.select {
 		margin-top: 0;
+		padding: 1em 0.2em 1em 2em;
 		max-width: 200px;
 		background-color: var(--elements);
 	}
