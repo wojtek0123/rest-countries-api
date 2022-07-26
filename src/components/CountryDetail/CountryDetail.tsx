@@ -7,7 +7,7 @@ import styles from './CountryDetail.module.css';
 import { Details } from '../../types/types';
 import { ReactComponent as ArrowLeft } from '../../assets/icons/arrow-left.svg';
 import themeContext from '../../store/theme';
-import useDisplayCommasInNumber from '../../hooks/use-display-comma-number';
+import { displayCommasInNumber } from '../../utils/displayCommasInNumber';
 
 const countryNameFromCodedFormUrl = 'https://restcountries.com/v3.1/alpha/';
 
@@ -17,7 +17,6 @@ const CountryDetail: React.FC = () => {
 	const { countries, getCountriesData, isLoading } = useFetchCountry();
 	const [borders, setBorders] = useState<string[]>([]);
 	const [country, setCountry] = useState<Country | undefined>();
-	const { displayCommasInNumber } = useDisplayCommasInNumber();
 
 	const countryDetailURL = `https://restcountries.com/v3.1/name/${id}?fullText=true`;
 	const getArrayAndNeedOnlyOneElement = 0;

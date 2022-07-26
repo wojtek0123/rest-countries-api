@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
-import useDisplayCommasInNumber from '../../hooks/use-display-comma-number';
+import { displayCommasInNumber } from '../../utils/displayCommasInNumber';
 
 const Card: React.FC<{
 	flagImage: string;
@@ -9,8 +9,6 @@ const Card: React.FC<{
 	region: string;
 	capital: string;
 }> = ({ flagImage, name, population, region, capital }) => {
-	const {displayCommasInNumber} = useDisplayCommasInNumber();
-
 	return (
 		<Link className={styles.card} to={`/${name}`}>
 			<img src={flagImage} alt={`Flag of ${name}`} />
