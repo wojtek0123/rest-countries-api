@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import './App.css';
 import Cards from './components/Cards/Cards';
 import Form from './components/Form/Form';
-import Header from './components/Header/Header';
+import Layout from './layout/Layout';
 import themeContext from './store/theme';
 import { Country } from './types/types';
 
@@ -21,16 +21,13 @@ function App() {
 	};
 
 	return (
-		<div className='app' data-theme={theme}>
-			<Header />
-			<main className='wrapper'>
-				<Form
+		<Layout theme={theme}>
+			<Form
 					onFilteredCountries={typedCountryNameByInput}
 					onIsLoading={isLoadingHandler}
 				/>
 				<Cards filteredCountries={typedName} isLoading={isLoading} />
-			</main>
-		</div>
+		</Layout>
 	);
 }
 

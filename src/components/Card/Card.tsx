@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
-import { displayCommasInNumber } from '../../utils/displayCommasInNumber';
 
 const Card: React.FC<{
 	flagImage: string;
@@ -17,7 +16,7 @@ const Card: React.FC<{
 				<div>
 					<p>
 						Population:{' '}
-						<span>{displayCommasInNumber(population)}</span>
+						<span>{new Intl.NumberFormat('en-EN').format(population)}</span>
 					</p>
 					<p>
 						Region: <span>{region}</span>

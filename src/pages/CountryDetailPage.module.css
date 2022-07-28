@@ -21,6 +21,10 @@
 	display: flex;
 }
 
+.text span {
+	font-size: 0.95rem;
+}
+
 .flag {
 	width: 100%;
 	aspect-ratio: 2 / 1;
@@ -38,19 +42,21 @@
 	border: none;
 	background-color: var(--elements);
 	box-shadow: var(--shadow);
-	margin: 3em 0 5em;
+	margin: 3em 0 4em;
 	padding: 0.5em 2em;
+	border-radius: var(--radius);
 	cursor: pointer;
 	text-decoration: none;
 }
 
 .btnText {
 	font-weight: 300;
+	font-size: 1rem;
 	color: var(--text);
 }
 
 .icon {
-	width: 1.5em;
+	height: 1.85em;
 	margin-right: 1em;
 	fill: var(--text);
 }
@@ -60,9 +66,14 @@
 	box-shadow: var(--shadow);
 	background-color: var(--elements);
 	color: var(--text);
-	margin: 0.5em;
+	margin: 0.5em 1em 0.5em 0;
 	padding: 0.5em 1.5em;
 	font-size: 0.8rem;
+}
+
+.borderLink {
+	text-decoration: none;
+	color: var(--text);
 }
 
 .borderBox {
@@ -126,19 +137,12 @@
 		font-size: 2rem;
 	}
 
-	.borderContainer {
-		display: flex;
-		align-items: center;
-	}
-
 	.borderBox {
 		align-items: center;
 	}
 
 	.borderTitle {
 		font-size: 1rem;
-		margin-bottom: 0em;
-		margin-right: 1em;
 	}
 
 	.boxes {
@@ -153,10 +157,28 @@
 	.text {
 		font-size: 0.95rem;
 	}
+
+	.text span {
+		font-size: 0.95rem;
+	}
 }
 
 @media (min-width: 1440px) {
 	.countryDetail {
 		margin-inline: 0;
+	}
+}
+
+@media (min-width: 2560px) {
+	.title {
+		font-size: 1.65rem;
+	}
+
+	.text {
+		font-size: 1.1rem;
+	}
+
+	.text span {
+		font-size: 1.1rem;
 	}
 }

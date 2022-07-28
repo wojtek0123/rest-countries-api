@@ -4,12 +4,12 @@
 	--background: hsl(0, 0%, 98%);
 	--elements: hsl(0, 0%, 100%);
 	--radius: .3em;
-  --shadow: 0 0 0.2rem var(--elements);
+  --shadow: 0 0 0.4em hsl(0, 0%, 90%);
 }
 
 [data-theme='dark'] {
 	--elements: hsl(209, 23%, 22%);
 	--background: hsl(207, 26%, 17%);
 	--text: hsl(0, 0%, 100%);
-	--shadow: 0 0 0.2rem var(--elements);
+	--shadow: 0 0 0.4em var(--elements);
 }

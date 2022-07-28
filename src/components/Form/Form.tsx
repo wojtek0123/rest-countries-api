@@ -51,6 +51,11 @@ const Form: React.FC<{
 	) => {
 		setSelectedValue(event.target.value);
 
+		if (event.target.value === 'All') {
+			setFilteredCountries(countries);
+			return;
+		}
+
 		setFilteredCountries(
 			countries.filter(
 				(country) =>
@@ -92,20 +97,18 @@ const Form: React.FC<{
 					placeholder='Search for a country...'
 				/>
 			</div>
-				<select
-					onChange={filteringCountriesByRegion}
-					defaultValue='Filter by Region'
-					className={styles.select}
-				>
-					<option value='Filter by Region' disabled hidden>
-						Filter by Region
-					</option>
-					<option value='Africa'>Africa</option>
-					<option value='Americas'>Americas</option>
-					<option value='Asia'>Asia</option>
-					<option value='Europe'>Europe</option>
-					<option value='Oceania'>Oceania</option>
-				</select>
+			<select
+				onChange={filteringCountriesByRegion}
+				defaultValue='Filter by Region'
+				className={styles.select}
+			>
+				<option value='All'>All</option>
+				<option value='Africa'>Africa</option>
+				<option value='Americas'>Americas</option>
+				<option value='Asia'>Asia</option>
+				<option value='Europe'>Europe</option>
+				<option value='Oceania'>Oceania</option>
+			</select>
 		</form>
 	);
 };

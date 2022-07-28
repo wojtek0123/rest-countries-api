@@ -33,6 +33,10 @@
 	padding: 1em 0;
 }
 
+.searchInput:focus-within {
+ border: 0.1em solid #fff;
+}
+
 .searchInput input[type='search']:focus {
 	outline: none;
 }
