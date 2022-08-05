@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
-import './App.css';
 import Cards from './components/Cards/Cards';
 import Form from './components/Form/Form';
 import Layout from './layout/Layout';
 import themeContext from './store/theme';
 import { Country } from './types/types';
+import './App.css';
 
 function App() {
 	const { theme } = useContext(themeContext);

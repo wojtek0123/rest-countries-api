@@ -17,9 +17,9 @@ const Header: React.FC = () => {
 				<Link to='/' className={styles.link}>
 					<h1 className={styles.title}>Where in the world?</h1>
 				</Link>
-				<button onClick={changeThemeHandler}>
+				<button onClick={changeThemeHandler} className={styles.text}>
 					<MoonIcon className={styles.image} />
-					<p className={styles.text}>{`${theme === 'dark' ? 'Light' : 'Dark'} Mode`}</p>
+					{`${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
 				</button>
 			</div>
 		</header>
