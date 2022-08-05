@@ -102,7 +102,7 @@ const Form: React.FC<{
 				defaultValue='Filter by Region'
 				className={styles.select}
 				name='filter by region'
-				aria-labelledby='filter by region'
+				aria-label='filter by region'
 			>
 				<option value='All'>All</option>
 				<option value='Africa'>Africa</option>
