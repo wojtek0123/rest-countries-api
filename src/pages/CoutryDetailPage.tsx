@@ -30,7 +30,7 @@ const CountryDetailPage = () => {
 			const data = await response.json();
 			setBorders((prevState) => [
 				...prevState,
-				data.map((country: Country) => country.name.common),
+				data.map((country: Country) => country.name.common.replaceAll(' ', '%20')),
 			]);
 		});
 	}, []);
@@ -158,7 +158,7 @@ const CountryDetailPage = () => {
 								{borders.map((border, index) => (
 									<div key={index} className={styles.borderCountry}>
 										<a href={`/${border}`} className={styles.borderLink}>
-											{border}
+											{JSON.parse(JSON.stringify(border).replaceAll('%20', ' '))}
 										</a>
 									</div>
 								))}

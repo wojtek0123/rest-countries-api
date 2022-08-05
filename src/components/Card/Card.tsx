@@ -9,7 +9,7 @@ const Card: React.FC<{
 	capital: string;
 }> = ({ flagImage, name, population, region, capital }) => {
 	return (
-		<Link className={styles.card} to={`/${name}`}>
+		<Link className={styles.card} to={`/${name.replaceAll(' ', '%20')}`}>
 			<img src={flagImage} alt={`Flag of ${name}`} />
 			<div className={styles.body}>
 				<h2>{name}</h2>

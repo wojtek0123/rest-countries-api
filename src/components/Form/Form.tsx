@@ -101,6 +101,7 @@ const Form: React.FC<{
 				onChange={filteringCountriesByRegion}
 				defaultValue='Filter by Region'
 				className={styles.select}
+				name='filter-by-region'
 			>
 				<option value='All'>All</option>
 				<option value='Africa'>Africa</option>
