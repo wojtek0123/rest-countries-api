@@ -15,13 +15,13 @@
 
 @media (min-width: 768px) {
   .cards {
-    margin-inline: 1em;
+    margin: 3em 1em;
   }
 }
 
 @media (min-width: 1400px) {
   .cards {
-    margin-inline: 0em;
+    margin: 3em 0em 0em;
   }
 
   .message {

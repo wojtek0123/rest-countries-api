@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-inline: 1em;
+	margin: 0 1em;
 }
 
 .searchInput {
@@ -106,6 +106,6 @@ select::-ms-expand {
 @media (min-width: 1440px) {
 	.form {
 		padding-top: 3em;
-		margin-inline: 0;
+		margin: 0;
 	}
 }

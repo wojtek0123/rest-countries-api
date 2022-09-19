@@ -3,18 +3,18 @@
 *,
 *::after,
 *::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   background-color: var(--background);
 }
 
 .wrapper {
-	max-width: 1400px;
-	width: 100%;
-	margin-inline: auto;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
 }
